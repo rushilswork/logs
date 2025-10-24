@@ -52,8 +52,14 @@ void TCSOLVE(){
         m[v[i]] = 1; // to get a quick access to know who is present and who is not
     }
 
-    // consider there is chunk of k missing elements, init => k+=n
-    // im considering the ans to be k , if anything i considered to be ans make sure it is not present, else increment k
+    /* consider there is chunk of k missing elements, init => k+=n
+    im considering the ans to be k , check if anything between start number and k occurs the chunk no longer stays intact it'll shrink as the element we considered to missing not longer missing so remove it from the chunk. To keep up the size of chunk add additional numbers
+    */
+
+    // The above can be implemented but we need to sort the vector and look for elements from starting number i.e, n + 1 between n + 1 and k
+
+    // but below approach works without sorting
+    
     int cnt = k; // 3 more elements to look for
     int elm = n + 1;
     while(1){
