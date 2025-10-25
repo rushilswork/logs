@@ -16,11 +16,19 @@ void TCSOLVE(){
     ll k;cin >> k;
     for(int i =0 ;i<n;){
         int aslindex = v[i] - 1;
+        // if already in right place move forward
         if(aslindex == i){
             i++;
             continue;
         }
         if(aslindex >= 0 && aslindex < n){
+
+            // if duplicate
+            if(v[aslindex] == v[i]){
+                cout << "duplicate is " << v[i] << endl;
+                i++;
+                // move forward already we set v[i] in right place earlier 
+            }
             swap(v[aslindex],v[i]);
         }
         else{
@@ -59,7 +67,7 @@ void TCSOLVE(){
     // The above can be implemented but we need to sort the vector and look for elements from starting number i.e, n + 1 between n + 1 and k
 
     // but below approach works without sorting
-    
+
     int cnt = k; // 3 more elements to look for
     int elm = n + 1;
     while(1){
