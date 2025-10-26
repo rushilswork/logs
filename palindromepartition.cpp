@@ -15,7 +15,7 @@ bool ispalindrome(string s){
 }
 void partitionpalindrome(string s, int i, vector<string> v){
 
-    // i is state more like ith partitional palindrome substring
+    // i is starting index palindrome substring
     if(i == s.length()){
         for(auto x: v){
             cout << x << " ";
@@ -23,7 +23,8 @@ void partitionpalindrome(string s, int i, vector<string> v){
         cout << endl;
         return;
     }
-    // for one state ( one palindrome substring ) we have many options to parition in the string, we dont know how many states it could take, we'll try all possibilities until we reach the end of the string , max states could be length of string
+
+    // from i begin the starting index you have j options to choose which are valid ofcourse, once substring from i - j is made, next starting index would be from j + 1
     for(int j = i;j<s.length();j++){
         string temp = s.substr(i,j - i + 1);
         if(!ispalindrome(temp)){
