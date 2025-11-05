@@ -1,0 +1,27 @@
+#This file clarifies on subarrays, subsequences, subsets and powerset
+
+
+# all these are combinations and not permutations ( arrangements )
+
+eg: 1 2 3
+
+#subarrays 
+-> Picking of elements is contiguous and order is maintained
+ex: [1, 2], [1, 2, 3], [2, 3]
+
+#subsequences 
+-> Picking of elements need not to be contiguous and order is maintained
+-> subarrays are subsets of subsequences
+ex: [1, 2], [1,3]
+-> (1 << n) = 2^n
+
+
+#subsets
+-> picking of elements need not to be contiguous and order need not to be maintained
+ex: [1, 2] (or) [2, 1] ( choose either of em ), [3, 2, 1], [3, 1] order need not to be maintained
+-> (1 << n) = 2^n
+
+
+#powerset
+-> combinations of all possible subsets including empty subset and the set itself
+-> (1 << n) = 2^n
