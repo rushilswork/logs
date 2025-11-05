@@ -1,5 +1,10 @@
 #This file clarifies on subarrays, subsequences, subsets and powerset
 
+#contiguous
+-> The elements that are being picked up should be next to each other
+
+#ordering
+-> The elements should be picked up in the order of their occurance in the array
 
 # all these are combinations and not permutations ( arrangements )
 
