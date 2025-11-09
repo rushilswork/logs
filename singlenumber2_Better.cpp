@@ -13,6 +13,7 @@ void TCSOLVE(){
         v.push_back(x);
     }
 
+    sort(v.begin(),v.end());
     int low = 0;
     int high = 0;
 
