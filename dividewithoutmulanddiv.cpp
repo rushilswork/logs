@@ -7,6 +7,12 @@ void TCSOLVE(){
     ll divisor, divident;
     cin >> divisor >> divident;
 
+    int sign = 1;
+    if(divisor < 0 || divident < 0){
+        sign = 0;
+        divisor = abs(divisor);
+        divident = abs(divident);
+    }
 /*
     int cnt =0 ;
     while(divident >= divisor){
@@ -30,7 +36,12 @@ void TCSOLVE(){
         ans+=(1 << pos);
         pos++;
     }
-    cout << ans << endl;
+    if(sign){
+        cout << ans << endl;    
+    }
+    else{
+        cout << -1*ans << endl;
+    }
 
 }
 int main(){
