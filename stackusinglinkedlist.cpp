@@ -20,6 +20,7 @@ void push(int x){
     newnode->next = NULL;
     if(top == NULL){
         top = newnode;
+        isEmpty = false;
     }
     else{
         newnode->next = top;
@@ -34,6 +35,14 @@ void pop(){
     struct node* tmp = top;
     top = top->next;
     tmp->next = NULL;
+    if(top == NULL){
+        isEmpty = true;
+    }
+}
+
+
+bool Empty(){
+    return isEmpty;
 }
 void TCSOLVE(){
     push(1);
