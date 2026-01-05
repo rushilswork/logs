@@ -44,6 +44,7 @@ void infixtopostfix(string &s){
         }
         // for operators
         else{
+            // in infix to postfix eventho if c is of equal proprity we'll pop the equal priority one from the stack
             while(!stc.empty() && prec(c) <= prec(stc.top())){
                 ans+=stc.top();
                 stc.pop();
