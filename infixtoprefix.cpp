@@ -43,6 +43,14 @@ void infixtopostfix(string &s){
             }
         }
         // for operators
+        // special case for infix to prefix, two "^" cannot be together, equal precedence should be removed for ^
+        else if(c == '^'){
+            while(!stc.empty() && prec(c) <= prec(stc.top())){
+                ans+=stc.top();
+                stc.pop();
+            }
+            stc.push(c);
+        }
         else{
             // in infix to prefix we dont't pop equal priority operators
             while(!stc.empty() && prec(c) < prec(stc.top())){
