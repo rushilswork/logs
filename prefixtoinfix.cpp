@@ -4,7 +4,7 @@ using namespace std;
 typedef long long int ll;
 
 
-void postfixtoinfix(string &s){
+void prefixtoinfix(string &s){
     string ans="";
     stack<string> stc;
     for(int i =s.length() - 1 ;i>=0;i--){
@@ -34,7 +34,7 @@ void postfixtoinfix(string &s){
 void TCSOLVE(){
     string s;
     cin >> s;
-    postfixtoinfix(s);
+    prefixtoinfix(s);
 }
 int main(){
     ll n;
