@@ -7,13 +7,23 @@ typedef long long int ll;
 
 // here we are finding out the number of times a value can be minimum and them (number of times it is min)*(min value)
 
+/*
+
+    edge case: 1 1
+    1, 1 1 -> 2 subarrays starting from 0 index
+    1, 1 1 -> 2 subarrays ending at 1 index,
+
+    here 1,1 is considered twice, so you either consider it once either from the front or from the back, i.e, either pse or nse, i.e, if you find the same element dont remove consider it, either in nse or pse, lets do it for pse
+
+ */
 ll mod = (1e9+7);
 vector<int> previoussmallerelement(vector<int> v){
     stack<int> s;
     int n = v.size();
     vector<int> pse(n);
     for(int i = 0;i<n;i++){
-        while(!s.empty() && v[i] <= v[s.top()]){
+        // removed <= and replaced < to handle edge case
+        while(!s.empty() && v[i] < v[s.top()]){
             s.pop();
         }
         if(!s.empty()){
@@ -63,16 +73,6 @@ void TCSOLVE(){
     vector<int> pse = previoussmallerelement(v);
     vector<int> nse = nextsmallerelement(v);
 
-
-    for(auto x: pse){
-        cout << x << " ";
-    }
-    cout << endl;
-    for(auto x: nse){
-        cout << x << " ";
-    }
-
-    cout << endl;
     /* 
         1 4 6 7 3 7 8 1
         how to find the number of subarrays where 3 can be the minimum
