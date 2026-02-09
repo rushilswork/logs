@@ -10,12 +10,16 @@ int utilityfunction(vector<int>&v,int k){
     int n = v.size();
     int l = 0;
     int r = 0;
-    int sum = 0;
+    int subcnt = 0;
     int cnt = 0;
     while(r < n){
-        sum+=v[r];
-        while(sum > k){
-            sum-=v[l];
+        if(v[r]&1){
+            subcnt++;
+        }
+        while(subcnt > k){
+            if(v[l]&1){
+                subcnt--;
+            }
             l++;
         }
         // while the sum is sum <= k, calculate the subarrays, basically we are building the count internally we are applying divide and conquer logic not techinically but logically, 
