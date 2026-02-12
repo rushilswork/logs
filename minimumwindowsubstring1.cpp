@@ -29,8 +29,10 @@ void TCSOLVE(){
             }
             if(cnt == t.length()){
                 len = j - i + 1;
-                minlen = min(minlen,len);
-                sidx = i;
+                if(minlen > len){
+                    minlen = len;
+                    sidx = i;
+                }
                 break;
             }
         }
