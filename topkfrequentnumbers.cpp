@@ -19,9 +19,11 @@ void TCSOLVE(){
     priority_queue<pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>>> pq;
     
     map<int,int> m;
-    for(int i =0 ;i<n;i++){
-        m[v[i]]++;
-        pq.push({m[v[i]],v[i]});
+    for(auto x: v){
+        m[x]++;
+    }
+    for(auto x: m){
+        pq.push({x.second,x.first});
         if(pq.size() > k){
             pq.pop();
         }
