@@ -3,6 +3,18 @@ using namespace std;
 
 typedef long long int ll;
 
+
+/*
+
+Think like this:
+
+A meeting that ends at 3 is better than one ending at 10
+
+Because after 3, you still have time for more meetings
+
+After 10, your day is almost gone
+
+*/
 bool magic(pair<int,int> p1, pair<int,int> p2){
     return p1.second < p2.second;
 }
