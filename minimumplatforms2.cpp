@@ -22,7 +22,9 @@ instead of checking which train is overlapping with what all trains and what is 
 
 we are interestedin finding the number of trains present at the point of time
 
+checking the whole picture all together ( view from outside station relative to time )
 
+we dont care which train has come and which train has left, we care about how many trains have come and how many have left
 */
     sort(v.begin(),v.end());
 
