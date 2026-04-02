@@ -15,7 +15,15 @@ void TCSOLVE(){
         v.push_back({y,'D'});
     }       
 
+/*
 
+
+instead of checking which train is overlapping with what all trains and what is the maximum cnt of overlapps
+
+we are interestedin finding the number of trains present at the point of time
+
+
+*/
     sort(v.begin(),v.end());
 
     int maxcnt = INT_MIN;
