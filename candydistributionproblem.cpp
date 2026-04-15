@@ -14,6 +14,7 @@ void TCSOLVE(){
     }
 
     vector<int> left;
+    // comparing left neighbours
     left.push_back(1);
     for(int i = 1;i<n;i++){
         if(v[i] > v[i - 1]){
@@ -25,7 +26,7 @@ void TCSOLVE(){
     }
 
     int prev = 1;
-    int right = 1; // curr
+    int right = 1; // curr // comparing right neighbours
 
     int sum = left[n - 1];
     for(int i = n - 2;i>=0;i--){
